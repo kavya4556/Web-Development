@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fun Interactive Quiz</title>
+<style>
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #e0f7fa;
+    margin: 0;
+    padding: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    text-align: center;
+    color: #00796b;
+  }
+  form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .question {
+    margin-bottom: 25px;
+  }
+  .question h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #004d40;
+  }
+  label {
+    display: block;
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  input[type="radio"] {
+    display: none;
+  }
+  /* Highlight on hover */
+  label:hover {
+    background-color: #b4dfb2;
+  }
+  /* Checked answer highlight */
+  input[type="radio"]:checked + label {
+    border-color: #790055;
+    background-color: #b2dfdb;
+    font-weight: bold;
+  }
+  /* Correct answer message */
+  input[type="radio"][data-correct="true"]:checked + label::after {
+    content: " ✔ Correct!";
+    color: green;
+    font-weight: 70;
+    margin-left: 10px;
+  }
+  /* Wrong answer message */
+  input[type="radio"]:checked + label:not([data-correct="true"])::after {
+    content: " ✘ Try again!";
+    color: red;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  button {
+    display: block;
+    margin: 30px auto 0;
+    background: #00796b;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #4d0000;
+  }
+</style>
+</head>
+<body>
+
+<h1>Fun Interactive Quiz</h1>
+<form>
+
+  <div class="question">
+    <h2>1. What is the capital of France?</h2>
+    <input type="radio" id="q1a1" name="q1" data-correct="false" />
+    <label for="q1a1" data-correct="false">Berlin</label>
+
+    <input type="radio" id="q1a2" name="q1" data-correct="true" />
+    <label for="q1a2" data-correct="true">Paris</label>
+
+    <input type="radio" id="q1a3" name="q1" data-correct="false" />
+    <label for="q1a3" data-correct="false">Madrid</label>
+  </div>
+
+  <div class="question">
+    <h2>2. Which planet is known as the Red Planet?</h2>
+    <input type="radio" id="q2a1" name="q2" data-correct="false" />
+    <label for="q2a1" data-correct="false">Venus</label>
+
+    <input type="radio" id="q2a2" name="q2" data-correct="true" />
+    <label for="q2a2" data-correct="true">Mars</label>
+
+    <input type="radio" id="q2a3" name="q2" data-correct="false" />
+    <label for="q2a3" data-correct="false">Jupiter</label>
+  </div>
+
+  <div class="question">
+    <h2>3. What is the largest ocean on Earth?</h2>
+    <input type="radio" id="q3a1" name="q3" data-correct="true" />
+    <label for="q3a1" data-correct="true">Pacific Ocean</label>
+
+    <input type="radio" id="q3a2" name="q3" data-correct="false" />
+    <label for="q3a2" data-correct="false">Atlantic Ocean</label>
+
+    <input type="radio" id="q3a3" name="q3" data-correct="false" />
+    <label for="q3a3" data-correct="false">Indian Ocean</label>
+  </div>
+
+  <button type="reset">Reset Quiz</button>
+</form>
+
+</body>
+</html>
